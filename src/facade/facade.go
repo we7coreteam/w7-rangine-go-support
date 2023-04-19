@@ -12,9 +12,9 @@ import (
 	"github.com/we7coreteam/w7-rangine-go-support/src/redis"
 )
 
-var app src.App
+var app support.App
 
-func SetApp(appI src.App) {
+func SetApp(appI support.App) {
 	app = appI
 }
 
