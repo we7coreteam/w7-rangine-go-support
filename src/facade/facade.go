@@ -6,15 +6,15 @@ import (
 	ut "github.com/go-playground/universal-translator"
 	"github.com/golobby/container/v3/pkg/container"
 	"github.com/spf13/viper"
-	"github.com/we7coreteam/w7-rangine-go-support/src/contract"
-	"github.com/we7coreteam/w7-rangine-go-support/src/contract/database"
-	"github.com/we7coreteam/w7-rangine-go-support/src/contract/logger"
-	"github.com/we7coreteam/w7-rangine-go-support/src/contract/redis"
+	"github.com/we7coreteam/w7-rangine-go-support/src"
+	"github.com/we7coreteam/w7-rangine-go-support/src/database"
+	"github.com/we7coreteam/w7-rangine-go-support/src/logger"
+	"github.com/we7coreteam/w7-rangine-go-support/src/redis"
 )
 
-var app contract.App
+var app src.App
 
-func SetApp(appI contract.App) {
+func SetApp(appI src.App) {
 	app = appI
 }
 

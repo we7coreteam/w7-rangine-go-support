@@ -4,8 +4,9 @@ import (
 	"github.com/asaskevich/EventBus"
 	"github.com/golobby/container/v3/pkg/container"
 	"github.com/spf13/viper"
-	"github.com/we7coreteam/w7-rangine-go-support/src/contract/console"
-	"github.com/we7coreteam/w7-rangine-go-support/src/contract/logger"
+	"github.com/we7coreteam/w7-rangine-go-support/src/console"
+	"github.com/we7coreteam/w7-rangine-go-support/src/logger"
+	"github.com/we7coreteam/w7-rangine-go-support/src/server"
 )
 
 type Provider interface {
@@ -15,10 +16,10 @@ type Provider interface {
 	GetContainer() container.Container
 	SetConfig(config *viper.Viper)
 	GetConfig() *viper.Viper
-	SetConsole(console *console.Console)
-	GetConsole() *console.Console
-	SetLoggerFactory(loggerFactory *logger.Factory)
-	GetLoggerFactory() *logger.Factory
+	SetConsole(console console.Console)
+	GetConsole() console.Console
+	SetLoggerFactory(loggerFactory logger.Factory)
+	GetLoggerFactory() logger.Factory
 	SetEvent(event EventBus.Bus)
 	GetEvent() EventBus.Bus
 }
@@ -75,4 +76,8 @@ func (abstract *Abstract) SetEvent(event EventBus.Bus) {
 
 func (abstract *Abstract) GetEvent() EventBus.Bus {
 	return abstract.event
+}
+
+func (abstract *Abstract) RegisterServer(sev server.Server) {
+	server.RegisterServer(sev)
 }
