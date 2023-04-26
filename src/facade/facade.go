@@ -7,9 +7,11 @@ import (
 	"github.com/golobby/container/v3/pkg/container"
 	"github.com/spf13/viper"
 	"github.com/we7coreteam/w7-rangine-go-support/src"
+	"github.com/we7coreteam/w7-rangine-go-support/src/console"
 	"github.com/we7coreteam/w7-rangine-go-support/src/database"
 	"github.com/we7coreteam/w7-rangine-go-support/src/logger"
 	"github.com/we7coreteam/w7-rangine-go-support/src/redis"
+	"github.com/we7coreteam/w7-rangine-go-support/src/server"
 )
 
 var app support.App
@@ -32,6 +34,10 @@ func GetEvent() EventBus.Bus {
 
 func GetLoggerFactory() logger.Factory {
 	return app.GetLoggerFactory()
+}
+
+func GetConsole() console.Console {
+	return app.GetConsole()
 }
 
 func GetRedisFactory() redis.Factory {
@@ -57,4 +63,12 @@ func GetTranslator() ut.Translator {
 
 func GetValidator() binding.StructValidator {
 	return binding.Validator
+}
+
+func RegisterServer(sev server.Server) {
+	server.RegisterServer(sev)
+}
+
+func GetServer(serverName string) server.Server {
+	return server.GetServer(serverName)
 }
