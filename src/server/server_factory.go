@@ -6,6 +6,10 @@ func RegisterServer(server Server) {
 	servers[server.GetServerName()] = server
 }
 
+func GetAllServer() map[string]Server {
+	return servers
+}
+
 func GetServer(serverName string) Server {
 	server, exists := servers[serverName]
 	if !exists {

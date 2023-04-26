@@ -69,6 +69,10 @@ func RegisterServer(sev server.Server) {
 	server.RegisterServer(sev)
 }
 
+func GetAllServer() map[string]server.Server {
+	return server.GetAllServer()
+}
+
 func GetServer(serverName string) server.Server {
 	return server.GetServer(serverName)
 }
