@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/we7coreteam/w7-rangine-go-support/src/console"
 	"github.com/we7coreteam/w7-rangine-go-support/src/logger"
+	"github.com/we7coreteam/w7-rangine-go-support/src/server"
 )
 
 type App interface {
@@ -14,4 +15,5 @@ type App interface {
 	GetEvent() EventBus.Bus
 	GetLoggerFactory() logger.Factory
 	GetConsole() console.Console
+	GetServerFactory() server.Factory
 }

@@ -40,6 +40,10 @@ func GetConsole() console.Console {
 	return app.GetConsole()
 }
 
+func GetServerFactory() server.Factory {
+	return app.GetServerFactory()
+}
+
 func GetRedisFactory() redis.Factory {
 	var redisFactory redis.Factory
 	_ = GetContainer().NamedResolve(&redisFactory, "redis-factory")
@@ -63,16 +67,4 @@ func GetTranslator() ut.Translator {
 
 func GetValidator() binding.StructValidator {
 	return binding.Validator
-}
-
-func RegisterServer(sev server.Server) {
-	server.RegisterServer(sev)
-}
-
-func GetAllServer() map[string]server.Server {
-	return server.GetAllServer()
-}
-
-func GetServer(serverName string) server.Server {
-	return server.GetServer(serverName)
 }
