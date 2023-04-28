@@ -40,8 +40,8 @@ func GetConsole() console.Console {
 	return app.GetConsole()
 }
 
-func GetServerFactory() server.Factory {
-	return app.GetServerFactory()
+func GetServerManager() server.Manager {
+	return app.GetServerManager()
 }
 
 func GetRedisFactory() redis.Factory {

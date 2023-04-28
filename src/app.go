@@ -15,5 +15,5 @@ type App interface {
 	GetEvent() EventBus.Bus
 	GetLoggerFactory() logger.Factory
 	GetConsole() console.Console
-	GetServerFactory() server.Factory
+	GetServerManager() server.Manager
 }
