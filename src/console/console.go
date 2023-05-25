@@ -1,6 +1,6 @@
 package console
 
 type Console interface {
-	RegisterCommand(command Command)
+	RegisterCommand(cmd Command)
 	Run()
 }
