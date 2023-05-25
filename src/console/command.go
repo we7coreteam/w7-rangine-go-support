@@ -6,5 +6,5 @@ type Command interface {
 	GetName() string
 	GetDescription() string
 	Configure(command *cobra.Command)
-	Handle(cmd *cobra.Command, args []string)
+	Handle(command *cobra.Command, args []string)
 }
