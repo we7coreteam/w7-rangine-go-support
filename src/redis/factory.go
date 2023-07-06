@@ -6,5 +6,5 @@ import (
 
 type Factory interface {
 	Channel(channel string) (redis.Cmdable, error)
-	RegisterRedis(channel string, client redis.Cmdable)
+	RegisterRedis(channel string, redisResolver func() redis.Cmdable)
 }
